@@ -1,27 +1,38 @@
+import { Link } from "react-router-dom"
+import { useState } from "react/cjs/react.development"
+import {BrowserRouter as Redirect} from 'react-router-dom'
+
 
 function LogIn(props) {
-    props.test()
+    const [red,setRed]= useState(false)
+    
 
     function handleSubmit(e) {
-        e.preventDefualt()
+        e.preventDefault()
+        const newUser = props.currentUser
+        newUser.userName = document.getElementById("user").value
+        props.setUser(newUser)
+        console.log(props.currentUser)
+        setRed(true)
 
     }
-    function handleChange(e) {
-        const inputField = e.target.name
-        const inputValue = e.target.value
+    // redircet does not work
+    if(red){
+        return(<Redirect to='./userProfile'/>)
     }
+   
     return (
         <div>
-            <form onSubmit={handleSubmit}>
+            <form>
                 <div>
                     <label htmlFor="userName">User Name</label>
-                    <input type="text" name="userName" onChange={handleChange} />
+                    <input type="text" id="user" name="userName"  />
                 </div>
                 <div>
                     <label htmlFor="password">Password</label>
                     <input type="password" name="password" />
                 </div>
-                <button>Log In</button>
+                <button onClick={handleSubmit}>Log In</button>
             </form>
         </div>
     )

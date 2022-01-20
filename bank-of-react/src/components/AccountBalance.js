@@ -1,7 +1,7 @@
 
 
-function AccountBalance(props){
-    return(
+function AccountBalance(props) {
+    return (
         <div>
             Balance: {props.balance}
         </div>

@@ -14,22 +14,6 @@ function App() {
       memberSince: '08/23/99'
     }
   )
-  function test(){
-    console.log("hello")
-  }
-  //this is the function that infinites loops without useEffect
-useEffect(()=>{ 
-  function mockLogIn(logInInfo){
-    const newUser = {...currentUser}
-    newUser.userName = logInInfo
-    setUser(newUser)
-    console.log(newUser)
-  }
-  mockLogIn("dannie")
-},[])
-
-  
-  
   return (
     <Router>
 
@@ -37,10 +21,11 @@ useEffect(()=>{
         <Routes>
           <Route exact path="/" element={<Home balance={balance} />} />
           <Route exact path="/userProfile" element={<UserProfile
-          userName={currentUser.userName} memberSince={currentUser.memberSince} />} />
-          <Route exact path="/login" element={<LogIn test={test} />} />
+            userName={currentUser.userName} memberSince={currentUser.memberSince} />} />
+          <Route exact path="/login" element={<LogIn
+            currentUser={currentUser} setUser={setUser} />} />
         </Routes>
-        
+
       </div>
 
     </Router>
