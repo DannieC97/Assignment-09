@@ -11,7 +11,7 @@ function Home(props) {
 
         <div>
 
-            <img src="https://letstalkpayments.com/wp-content/uploads/2016/04/Bank.png" alt="bank" />
+            <img src="https://cdn-icons-png.flaticon.com/512/2830/2830284.png" alt="bank" className='bank-img'/>
             <h1>Bank of React</h1>
             <div className='links'>
                 <Link to="/userProfile">User Profile</Link>
