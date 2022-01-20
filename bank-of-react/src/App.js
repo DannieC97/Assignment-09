@@ -9,7 +9,8 @@ import Debits from './components/Debits';
 
 
 function App() {
-  const [balance, setBalance] = useState(14568.27)
+  const [balance, setBalance] = useState(14568.27
+    )
   const [currentUser, setUser] = useState(
     {
       userName: 'bob_loblaw',
@@ -18,8 +19,10 @@ function App() {
   )
   const [creditData,setCreditData] = useState([])
   const [debitData,setDebitData] = useState([])
-  let creditFetched = false;
-  let debitFetched = false;
+ 
+  let creditFetched = false
+  let debitFetched = false
+  let balanceInit =false
     useEffect(()=> {
       (async ()=>{
         if(!creditFetched){
@@ -27,6 +30,7 @@ function App() {
         const data = await response.json();
         setCreditData(data)
         creditFetched = true
+
       }
         
       })();
@@ -38,12 +42,12 @@ function App() {
         const data = await response.json();
         setDebitData(data)
         debitFetched = true
+
         }
       })();
     },[]);
-    console.log(creditData)
-    console.log(debitData)
-    
+
+
     
 
   
@@ -54,13 +58,13 @@ function App() {
         <Routes>
           <Route exact path="/" element={<Home balance={balance} />} />
           <Route exact path="/userProfile" element={<UserProfile
-            currentUser={currentUser} />} />
+            currentUser={currentUser} balance={balance} />} />
           <Route exact path="/login" element={<LogIn
             currentUser={currentUser} setUser={setUser} />} />
             <Route exact path="/credits" element={<Credits
-            creditData={creditData} setCreditData={setCreditData} />}/>
+            creditData={creditData} setCreditData={setCreditData} balance={balance} setBalance={setBalance}/>}/>
             <Route exact path="/debits" element={<Debits
-            debitData={debitData} setDebitData={setDebitData} />} />
+            debitData={debitData} setDebitData={setDebitData} balance={balance} setBalance={setBalance}/>} />
         </Routes>
 
       </div>

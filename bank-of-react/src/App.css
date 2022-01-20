@@ -16,6 +16,18 @@ li {
   
 }
 
+header{
+  margin-left: 200px;
+  display: flex;
+  flex-direction: row;
+}
+
+.nav-item{
+  border: 1.5px solid black;
+  margin-right: 5px;
+  cursor: pointer;
+}
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;

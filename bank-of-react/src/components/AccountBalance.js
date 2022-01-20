@@ -3,7 +3,7 @@
 function AccountBalance(props) {
     return (
         <div>
-            Balance: {props.balance}
+            Balance: ${props.balance}
         </div>
     )
 

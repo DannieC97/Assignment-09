@@ -2,6 +2,7 @@ import { Link } from "react-router-dom"
 import { useState, useEffect } from "react/cjs/react.development"
 import {BrowserRouter as Redirect} from 'react-router-dom'
 import { useNavigate } from "react-router-dom"
+import Navigation from './Navigation';
 
 function LogIn(props) {
     const [red,setRed]= useState(false)
@@ -26,6 +27,7 @@ function LogIn(props) {
    
     return (
         <div>
+            <Navigation/>
             <form>
                 <div>
                     <label htmlFor="userName">User Name</label>
