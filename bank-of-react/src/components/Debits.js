@@ -1,16 +1,40 @@
 import { Link } from 'react-router-dom'
 function Debits(props) {
-    const data = props.debitData
-    console.log(data)
+    //const data = props.debitData
+   // console.log(data)
+   function addItem(){
+       let amount1 = document.querySelector(".debt-amount").value
+       let description1 = document.querySelector(".debt-description").value
+       let newId = String(amount1).substring(0,1)+description1.substring(0,2)
+       let date = new Date()
+       let date1 = String(date)
+       let newItem={amount: amount1, date: date1, description: description1,id: newId}
+       props.setDebitData([...props.debitData, newItem])
+   }
     return (
         <div>
             <h1>Debits</h1>
             <Link to="/">Home</Link>
-            <ul>
-                {data.map((item)=>{
-                  return  <li key={item.id}>{item.date}</li>
+            
+                {props.debitData.map((item)=>{
+                  return  (
+                  <ul key={item.id}>
+                     <li> {item.description}</li>
+                     <li>{item.date.substring(0, 9)}</li>
+                     <li>{"$"+item.amount}</li>
+                     
+                      
+
+                  </ul>
+                  )
                 })}
-            </ul>
+           
+            <h5>Add a Debit:</h5>
+            <label>Amount</label>
+            <input type="text" className="debt-amount" ></input>
+            <label>Description</label>
+            <input type="text" className="debt-description" ></input>
+            <button onClick={addItem} className='debit-btn'>ADD</button>
         </div>
     )
 }

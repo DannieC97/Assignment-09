@@ -7,6 +7,15 @@
   width: 120px;
 }
 
+ul {
+  list-style-type: none;
+}
+
+li {
+  font-size: 18px;
+  
+}
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;

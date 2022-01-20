@@ -18,21 +18,27 @@ function App() {
   )
   const [creditData,setCreditData] = useState([])
   const [debitData,setDebitData] = useState([])
+  let creditFetched = false;
+  let debitFetched = false;
     useEffect(()=> {
       (async ()=>{
+        if(!creditFetched){
         const response = await fetch(`https://moj-api.herokuapp.com/credits`);
         const data = await response.json();
         setCreditData(data)
-        
+        creditFetched = true
+      }
         
       })();
     },[]);
     useEffect(()=> {
       (async ()=>{
+        if(!debitFetched){
         const response = await fetch(`https://moj-api.herokuapp.com/debits`);
         const data = await response.json();
         setDebitData(data)
-        
+        debitFetched = true
+        }
       })();
     },[]);
     console.log(creditData)
@@ -52,9 +58,9 @@ function App() {
           <Route exact path="/login" element={<LogIn
             currentUser={currentUser} setUser={setUser} />} />
             <Route exact path="/credits" element={<Credits
-            creditData={creditData} />}/>
+            creditData={creditData} setCreditData={setCreditData} />}/>
             <Route exact path="/debits" element={<Debits
-            debitData={debitData} />} />
+            debitData={debitData} setDebitData={setDebitData} />} />
         </Routes>
 
       </div>
