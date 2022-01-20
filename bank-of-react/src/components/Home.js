@@ -10,14 +10,16 @@ function Home(props) {
     return (
 
         <div>
-
-            <img src="https://cdn-icons-png.flaticon.com/512/2830/2830284.png" alt="bank" className='bank-img'/>
-            <h1>Bank of React</h1>
             <div className='links'>
                 <Link to="/userProfile">User Profile</Link>
                 <Link className='link1' to="/login">Log In</Link>
+                <Link className='link1'to="/credits">Credits</Link>
+                <Link to="/debits">Debits</Link>
 
             </div>
+            <img src="https://cdn-icons-png.flaticon.com/512/2830/2830284.png" alt="bank" className='bank-img'/>
+            <h1>Bank of React</h1>
+            
             <AccountBalance balance={props.balance} />
 
         </div>
