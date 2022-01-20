@@ -1,25 +1,28 @@
 import { Link } from "react-router-dom"
-import { useState } from "react/cjs/react.development"
+import { useState, useEffect } from "react/cjs/react.development"
 import {BrowserRouter as Redirect} from 'react-router-dom'
-
+import { useNavigate } from "react-router-dom"
 
 function LogIn(props) {
     const [red,setRed]= useState(false)
-    
-
-    function handleSubmit(e) {
+    let navigate = useNavigate()
+    function userProfRedirect(){    
+            navigate("/userProfile")
+     }
+    function handleLoginSubmit(e) {
         e.preventDefault()
         const newUser = props.currentUser
         newUser.userName = document.getElementById("user").value
+        let date = new Date()
+        let dateString = date.getMonth()+1 +"/"+ date.getUTCDate() +"/"+ date.getUTCFullYear()
+        newUser.memberSince = dateString
         props.setUser(newUser)
         console.log(props.currentUser)
         setRed(true)
-
+        setTimeout(userProfRedirect, 500);
     }
-    // redircet does not work
-    if(red){
-        return(<Redirect to='./userProfile'/>)
-    }
+        
+    
    
     return (
         <div>
@@ -32,7 +35,7 @@ function LogIn(props) {
                     <label htmlFor="password">Password</label>
                     <input type="password" name="password" />
                 </div>
-                <button onClick={handleSubmit}>Log In</button>
+                <button onClick={handleLoginSubmit}>Log In</button>
             </form>
         </div>
     )

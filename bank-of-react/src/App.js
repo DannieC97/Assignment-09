@@ -14,6 +14,7 @@ function App() {
       memberSince: '08/23/99'
     }
   )
+  
   return (
     <Router>
 
@@ -21,7 +22,7 @@ function App() {
         <Routes>
           <Route exact path="/" element={<Home balance={balance} />} />
           <Route exact path="/userProfile" element={<UserProfile
-            userName={currentUser.userName} memberSince={currentUser.memberSince} />} />
+            currentUser={currentUser} />} />
           <Route exact path="/login" element={<LogIn
             currentUser={currentUser} setUser={setUser} />} />
         </Routes>

@@ -4,8 +4,8 @@ function UserProfile(props) {
         <div>
             <h1>User Profile</h1>
             <Link to="/">Home</Link>
-            <div>UserName: {props.userName} </div>
-            <div>Member Since: {props.memberSince} </div>
+            <div>UserName: {props.currentUser.userName} </div>
+            <div>Member Since: {props.currentUser.memberSince} </div>
         </div>
     )
 }
