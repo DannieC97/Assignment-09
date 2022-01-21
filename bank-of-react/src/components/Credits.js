@@ -20,14 +20,24 @@ function Credits(props) {
         <div>
         <Navigation/>
         <AccountBalance balance={props.balance}/>
-        <h1>Credits</h1>
-       
+        <h1 >Credits</h1>
+        <h5>Add a Credit:</h5>
+        
+        <label>Description</label>
+        <br></br>
+        <input type="text" className="credit-description" ></input>
+        <br></br>
+        <label>Amount</label>
+        <br></br>
+        <input type="number" className="credit-amount" ></input>
+        <br></br>
+        <button onClick={addItem} className='credit-btn'>ADD</button>
             {props.creditData.map((item)=>{
               return  (
-              <ul key={item.id}>
-                 <li> {item.description}</li>
-                 <li>{item.date.substring(0, 9)}</li>
-                 <li>{"$"+item.amount}</li>
+              <ul className ="record" key={item.id}>
+                 <li><b>Item Name: </b> {item.description}</li>
+                 <li><b>Date Paid: </b> {item.date.substring(0, 9)}</li>
+                 <li><b>Item Amount: </b> {"$"+item.amount}</li>
                  
                   
 
@@ -35,13 +45,7 @@ function Credits(props) {
               )
             })}
        
-        <h5>Add a Credit:</h5>
         
-        <label>Description</label>
-        <input type="text" className="credit-description" ></input>
-        <label>Amount</label>
-        <input type="number" className="credit-amount" ></input>
-        <button onClick={addItem} className='credit-btn'>ADD</button>
     </div>
     )
 }

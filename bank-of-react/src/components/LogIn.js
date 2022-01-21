@@ -28,16 +28,23 @@ function LogIn(props) {
     return (
         <div>
             <Navigation/>
+            <div className="center">
+                <img  src="https://cdn-icons-png.flaticon.com/512/2830/2830284.png" alt="bank" className='bank-img'/>
+            </div>
             <form>
-                <div>
+                <div className="center">
                     <label htmlFor="userName">User Name</label>
+                    <br></br>
                     <input type="text" id="user" name="userName"  />
                 </div>
-                <div>
+                <div className="center">
                     <label htmlFor="password">Password</label>
+                    <br></br>
                     <input type="password" name="password" />
                 </div>
-                <button onClick={handleLoginSubmit}>Log In</button>
+                <div className="center">
+                    <button className="center" onClick={handleLoginSubmit}>Log In</button>
+                </div>
             </form>
         </div>
     )

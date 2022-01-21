@@ -1,5 +1,5 @@
 .App {
-  text-align: center;
+  text-align: left;
 }
 
 .bank-img{
@@ -17,7 +17,6 @@ li {
 }
 
 header{
-  margin-left: 200px;
   display: flex;
   flex-direction: row;
 }

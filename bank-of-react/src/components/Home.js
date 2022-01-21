@@ -11,12 +11,13 @@ function Home(props) {
 
         <div>
             <Navigation/>
-           
-            <img src="https://cdn-icons-png.flaticon.com/512/2830/2830284.png" alt="bank" className='bank-img'/>
+            <div className="center">
+                <div class="imgcontainer">
+                    <img src="https://cdn-icons-png.flaticon.com/512/2830/2830284.png" alt="bank" className='bank-img'/>
+                </div>
             <h1>Bank of React</h1>
-            
             <AccountBalance balance={props.balance} />
-
+            </div>
         </div>
 
     );
