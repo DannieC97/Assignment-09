@@ -44,7 +44,12 @@ function Credits(props) {
               </ul>
               )
             })}
-       
+        <footer>
+        <h1>Authors:</h1>
+                <h2>Vincent</h2>
+                <h2>Daniel</h2>
+                <h2>Rivka</h2>
+            </footer>
         
     </div>
     )

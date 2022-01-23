@@ -19,12 +19,8 @@ li {
 header{
   display: flex;
   flex-direction: row;
-}
-
-.nav-item{
-  border: 1.5px solid black;
-  margin-right: 5px;
-  cursor: pointer;
+  justify-content: space-between;
+  align-items: left;
 }
 
 .App-logo {
@@ -68,3 +64,65 @@ header{
 .link1{
   padding: 10px;
 }
+
+
+
+
+
+
+b{
+  text-decoration: underline;
+  -webkit-text-decoration-color: rgb(0, 195, 255); /* Safari */  
+  text-decoration-color: rgb(0, 195, 255);
+}
+
+
+.homeImg{
+  height: 830px;
+  width: 100%;
+}
+
+
+
+.nat {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: rgb(200, 255, 1);
+}
+
+.nav-item2{
+  float: left;
+  border-right:1px solid #bbb;
+}
+
+.nav-item2:last-child {
+  border-right: none;
+}
+
+.nav-item2 a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+.nav-item2 a:hover:not(.active) {
+  background-color: #111;
+}
+
+.active {
+  background-color: #04AA6D;
+}
+
+
+footer {
+  text-align: center;
+  padding: 3px;
+  background-color: DarkSalmon;
+  color: white;
+}
+
+

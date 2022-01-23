@@ -7,6 +7,7 @@ import LogIn from './components/LogIn';
 import Credits from './components/Credits';
 import Debits from './components/Debits';
 
+import background from "./Capture.PNG";
 
 function App() {
   const [balance, setBalance] = useState(14568.27
@@ -52,9 +53,13 @@ function App() {
 
   
   return (
+    
     <Router>
-
+      <div style={{ backgroundImage: `url(${background})` }}>
       <div className="App">
+      
+      
+    
         <Routes>
           <Route exact path="/" element={<Home balance={balance} />} />
           <Route exact path="/userProfile" element={<UserProfile
@@ -66,7 +71,7 @@ function App() {
             <Route exact path="/debits" element={<Debits
             debitData={debitData} setDebitData={setDebitData} balance={balance} setBalance={setBalance}/>} />
         </Routes>
-
+        </div>
       </div>
 
     </Router>
