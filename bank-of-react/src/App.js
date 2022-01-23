@@ -7,11 +7,9 @@ import LogIn from './components/LogIn';
 import Credits from './components/Credits';
 import Debits from './components/Debits';
 
-import background from "./Capture.PNG";
 
 function App() {
-  const [balance, setBalance] = useState(14568.27
-    )
+  const [balance, setBalance] = useState(14568.27)
   const [currentUser, setUser] = useState(
     {
       userName: 'bob_loblaw',
@@ -20,58 +18,45 @@ function App() {
   )
   const [creditData,setCreditData] = useState([])
   const [debitData,setDebitData] = useState([])
- 
-  let creditFetched = false
-  let debitFetched = false
-  let balanceInit =false
     useEffect(()=> {
       (async ()=>{
-        if(!creditFetched){
         const response = await fetch(`https://moj-api.herokuapp.com/credits`);
         const data = await response.json();
         setCreditData(data)
-        creditFetched = true
-
-      }
+        
         
       })();
     },[]);
     useEffect(()=> {
       (async ()=>{
-        if(!debitFetched){
         const response = await fetch(`https://moj-api.herokuapp.com/debits`);
         const data = await response.json();
         setDebitData(data)
-        debitFetched = true
-
-        }
+        
       })();
     },[]);
-
-
+   // console.log(creditData)
+   // console.log(debitData)
+    
     
 
   
   return (
-    
     <Router>
-      <div style={{ backgroundImage: `url(${background})` }}>
+
       <div className="App">
-      
-      
-    
         <Routes>
-          <Route exact path="/" element={<Home balance={balance} />} />
-          <Route exact path="/userProfile" element={<UserProfile
-            currentUser={currentUser} balance={balance} />} />
-          <Route exact path="/login" element={<LogIn
+          <Route exact path={process.env.PUBLIC_URL + "/"} element={<Home balance={balance} />} />
+          <Route exact path={process.env.PUBLIC_URL + "/userProfile"} element={<UserProfile
+            currentUser={currentUser} />} />
+          <Route exact path={process.env.PUBLIC_URL + "/login"} element={<LogIn
             currentUser={currentUser} setUser={setUser} />} />
-            <Route exact path="/credits" element={<Credits
-            creditData={creditData} setCreditData={setCreditData} balance={balance} setBalance={setBalance}/>}/>
-            <Route exact path="/debits" element={<Debits
-            debitData={debitData} setDebitData={setDebitData} balance={balance} setBalance={setBalance}/>} />
+            <Route exact path={process.env.PUBLIC_URL + "/credits"} element={<Credits
+            creditData={creditData} />}/>
+            <Route exact path={process.env.PUBLIC_URL + "/debits"} element={<Debits
+            debitData={debitData} />} />
         </Routes>
-        </div>
+
       </div>
 
     </Router>
