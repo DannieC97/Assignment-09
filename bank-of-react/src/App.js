@@ -1,6 +1,6 @@
 import './App.css';
 import React, { Component, useEffect, useState } from 'react';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
+import { HashRouter, HashRouter as Router, Route, Routes } from 'react-router-dom'
 import Home from "./components/Home";
 import UserProfile from './components/UserProfile';
 import LogIn from './components/LogIn';
@@ -42,7 +42,7 @@ function App() {
 
   
   return (
-    <Router basename={process.env.PUBLIC_URL}>
+    <HashRouter>
 
       <div className="App">
         <Routes >
@@ -59,7 +59,7 @@ function App() {
 
       </div>
 
-    </Router>
+    </HashRouter>
   );
 }
 
