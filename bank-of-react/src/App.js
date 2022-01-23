@@ -42,18 +42,18 @@ function App() {
 
   
   return (
-    <Router>
+    <Router basename={process.env.PUBLIC_URL}>
 
       <div className="App">
-        <Routes>
-          <Route exact path={process.env.PUBLIC_URL + "/"} element={<Home balance={balance} />} />
-          <Route exact path={process.env.PUBLIC_URL + "/userProfile"} element={<UserProfile
+        <Routes >
+          <Route exact path={"/"} element={<Home balance={balance} />} />
+          <Route exact path="/userProfile" element={<UserProfile
             currentUser={currentUser} />} />
-          <Route exact path={process.env.PUBLIC_URL + "/login"} element={<LogIn
+          <Route exact path="/login" element={<LogIn
             currentUser={currentUser} setUser={setUser} />} />
-            <Route exact path={process.env.PUBLIC_URL + "/credits"} element={<Credits
+            <Route exact path="/credits" element={<Credits
             creditData={creditData} />}/>
-            <Route exact path={process.env.PUBLIC_URL + "/debits"} element={<Debits
+            <Route exact path="/debits" element={<Debits
             debitData={debitData} />} />
         </Routes>
 
