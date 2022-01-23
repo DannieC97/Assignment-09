@@ -10,7 +10,9 @@ function Credits(props) {
         let newId = String(amount1).substring(0,1)+description1.substring(0,2)
         let date = new Date()
         let date1 = String(date)
-        let newItem={amount: amount1, date: date1, description: description1,id: newId}
+        let date2= date.toISOString()
+        console.log(date1)
+        let newItem={amount: amount1, date: date2, description: description1,id: newId}
         amount1 = parseFloat(amount1)
         props.setBalance(props.balance + amount1)
         props.setCreditData([...props.creditData, newItem])
@@ -36,7 +38,7 @@ function Credits(props) {
               return  (
               <ul className ="record" key={item.id}>
                  <li><b>Item Name: </b> {item.description}</li>
-                 <li><b>Date Paid: </b> {item.date.substring(0, 9)}</li>
+                 <li><b>Date Paid: </b> {item.date.substring(0, 10)}</li>
                  <li><b>Item Amount: </b> {"$"+item.amount}</li>
                  
                   

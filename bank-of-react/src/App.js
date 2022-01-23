@@ -52,9 +52,9 @@ function App() {
           <Route exact path="/login" element={<LogIn
             currentUser={currentUser} setUser={setUser} />} />
             <Route exact path="/credits" element={<Credits
-            creditData={creditData} setBalance={setBalance} setCreditData={setCreditData} />}/>
+            creditData={creditData} setBalance={setBalance} setCreditData={setCreditData} balance={balance}/>}/>
             <Route exact path="/debits" element={<Debits
-            debitData={debitData} setDebitData={setDebitData} setBalance={setBalance} />} />
+            debitData={debitData} setDebitData={setDebitData} setBalance={setBalance} balance={balance} />} />
         </Routes>
 
       </div>
