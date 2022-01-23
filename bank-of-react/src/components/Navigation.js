@@ -18,12 +18,12 @@ function Navigation(){
         navigate("/debits")
     }
     return(
-        <header>
-            <h3 className="nav-item" onClick={homeRedirect}>Home</h3>
-            <h3 className="nav-item" onClick={loginRedirect}>Login</h3>
-            <h3 className="nav-item" onClick={userProfRedirect}>User Profile</h3>
-            <h3 className="nav-item" onClick={creditRedirect}>Credits</h3>
-            <h3 className="nav-item" onClick={debitRedirect}>Debits</h3>
+        <header className="nat">
+            <button className="nav-item2" onClick={homeRedirect}><b>Home</b></button>
+            <button className="nav-item2" onClick={loginRedirect}>Login</button>
+            <button className="nav-item2" onClick={userProfRedirect}>User Profile</button>
+            <button className="nav-item2" onClick={creditRedirect}>Credits</button>
+            <button className="nav-item2" onClick={debitRedirect}>Debits</button>
         </header>
     )
 }

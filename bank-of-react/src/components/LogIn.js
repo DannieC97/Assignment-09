@@ -28,17 +28,72 @@ function LogIn(props) {
     return (
         <div>
             <Navigation/>
+            <div className="center">
+                <img  src="https://cdn-icons-png.flaticon.com/512/2830/2830284.png" alt="bank" className='bank-img'/>
+            </div>
             <form>
-                <div>
+                <div className="center">
                     <label htmlFor="userName">User Name</label>
+                    <br></br>
                     <input type="text" id="user" name="userName"  />
                 </div>
-                <div>
+                <div className="center">
                     <label htmlFor="password">Password</label>
+                    <br></br>
                     <input type="password" name="password" />
                 </div>
-                <button onClick={handleLoginSubmit}>Log In</button>
+                <div className="center">
+                    <button className="center" onClick={handleLoginSubmit}>Log In</button>
+                </div>
+                <br></br>
+            <br></br>
+            <br></br>
+            <br></br>
+            <br></br>
+            <br></br>
+            <br></br>
+            <br></br>
+            <br></br>
+            <br></br>
+            <br></br>
+            <br></br>
+            <br></br>
+            <br></br>
+            <br></br>
+            <br></br>
+            <br></br>
+            <br></br>
+            <br></br>
+            <br></br>
+            <br></br>
+            <br></br>
+            <br></br>
+            <br></br>
+            <br></br>
+            <br></br>
+            <br></br>
+            <br></br>
+            <br></br>
+            <br></br>
+            <br></br>
+            <br></br>
+            <br></br>
+            <br></br>
+            <br></br>
+            <br></br>
+            <br></br>
+            <br></br>
+            <br></br>
+            <br></br>
+            <br></br>
+            <br></br>
             </form>
+            <footer>
+            <h1>Authors:</h1>
+                <h2>Vincent</h2>
+                <h2>Daniel</h2>
+                <h2>Rivka</h2>
+            </footer>
         </div>
     )
 
