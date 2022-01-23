@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react/cjs/react.development"
+import { useState, useEffect } from "react"
 import { useNavigate } from "react-router-dom"
 import Navigation from './Navigation';
 

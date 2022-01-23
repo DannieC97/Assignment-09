@@ -48,7 +48,7 @@ function App() {
         <Routes >
           <Route exact path={"/"} element={<Home balance={balance} />} />
           <Route exact path="/userProfile" element={<UserProfile
-            currentUser={currentUser} />} />
+            currentUser={currentUser} balance={balance} />} />
           <Route exact path="/login" element={<LogIn
             currentUser={currentUser} setUser={setUser} />} />
             <Route exact path="/credits" element={<Credits
