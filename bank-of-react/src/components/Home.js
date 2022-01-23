@@ -12,7 +12,7 @@ function Home(props) {
         <div>
             <Navigation/>
             <div className="center">
-                <div class="imgcontainer">
+                <div className="imgcontainer">
                     <img src="https://cdn-icons-png.flaticon.com/512/2830/2830284.png" alt="bank" className='bank-img'/>
                 </div>
             <h1>Bank of React</h1>
